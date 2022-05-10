@@ -5,14 +5,12 @@
 mod ffi {
     unsafe extern "C++" {
         include!("rtxtool/radio_tool/include/radio_tool/radio/radio_factory.hpp");
-        include!("rtxtool/include/radio_factory.h");
+        include!("rtxtool/include/radio_tool.h");
 
-        type RadioFactory;
-
-        fn new_radiofactory() -> UniquePtr<RadioFactory>;
+        fn radio_tool_flash();
     }
 }
 
 fn main() {
-    let client = ffi::new_radiofactory();
+    ffi::radio_tool_flash();
 }
