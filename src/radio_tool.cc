@@ -13,7 +13,8 @@ namespace radio_tool::radio
     void flash_radio(){
         auto rdFactory = RadioFactory();
         const auto &d = rdFactory.ListDevices();
-        if(d.size() <= 0) return;
+        if(d.size() <= 0)
+            throw std::runtime_error("No radio detected");
         // We flash the first radio
         uint16_t index = 0;
         auto radio = rdFactory.OpenDevice(index);
