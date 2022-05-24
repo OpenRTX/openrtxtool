@@ -3,6 +3,6 @@
 
 namespace radio_tool::radio {
 
-void radio_tool_flash();
+void flash_radio();
 
 } // namespace radio_tool::radio

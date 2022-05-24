@@ -7,10 +7,10 @@ mod ffi {
         include!("rtxtool/radio_tool/include/radio_tool/radio/radio_factory.hpp");
         include!("rtxtool/include/radio_tool.h");
 
-        fn radio_tool_flash();
+        fn flash_radio();
     }
 }
 
 fn main() {
-    ffi::radio_tool_flash();
+    ffi::flash_radio();
 }

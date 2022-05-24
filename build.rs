@@ -21,6 +21,7 @@ fn main() {
         .compile("radio_factory");
 
     println!("cargo:rerun-if-changed=src/main.rs");
+    println!("cargo:rerun-if-changed=src/radio_tool.cc");
     println!("cargo:rerun-if-changed=radio_tool/src/radio_factory.cpp");
     println!("cargo:rerun-if-changed=radio_tool/src/usb_radio_factory.cpp");
     println!("cargo:rerun-if-changed=radio_tool/src/serial_radio_factory.cpp");

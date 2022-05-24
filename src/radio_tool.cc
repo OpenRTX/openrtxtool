@@ -8,13 +8,17 @@
 
 namespace radio_tool::radio
 {
-    void radio_tool_flash(){
+
+    // Flash and reboot the first connected radio
+    void flash_radio(){
         auto rdFactory = RadioFactory();
+        const auto &d = rdFactory.ListDevices();
+        if(d.size() <= 0) return;
         // We flash the first radio
         uint16_t index = 0;
         auto radio = rdFactory.OpenDevice(index);
         auto in_file = "./test.bin";
         radio->WriteFirmware(in_file);
-}
+    }
 
 } // namespace radio_tool::radio
