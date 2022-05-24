@@ -22,11 +22,6 @@ fn main() {
 
     println!("cargo:rerun-if-changed=src/main.rs");
     println!("cargo:rerun-if-changed=src/radio_tool.cc");
-    println!("cargo:rerun-if-changed=radio_tool/src/radio_factory.cpp");
-    println!("cargo:rerun-if-changed=radio_tool/src/usb_radio_factory.cpp");
-    println!("cargo:rerun-if-changed=radio_tool/src/serial_radio_factory.cpp");
-    println!("cargo:rerun-if-changed=radio_tool/include/radio_tool/radio/radio_factory.hpp");
-    println!("cargo:rerun-if-changed=radio_tool/include/radio_tool/radio/usb_radio_factory.hpp");
-    println!("cargo:rerun-if-changed=radio_tool/include/radio_tool/radio/serial_radio_factory.hpp");
+    println!("cargo:rerun-if-changed=include/radio_tool.h");
     println!("cargo:rustc-link-lib=usb-1.0");
 }
