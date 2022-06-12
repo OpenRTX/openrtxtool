@@ -10,6 +10,16 @@
 namespace radio_tool::radio
 {
 
+    // List compatible connected devices
+    void list_devices(){
+        auto rdFactory = RadioFactory();
+        const auto &d = rdFactory.ListDevices();
+        for(auto i : d)
+        {
+            std::wcout << i->ToString() << std::endl;
+        }
+    }
+
     // Flash the first connected radio
     void flash_radio(){
         auto rdFactory = RadioFactory();
