@@ -17,23 +17,6 @@ mod ffi {
     }
 }
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    // Print usage information
-    if args.len() < 2 {
-        println!("rtxtool: OpenRTX Installation Software");
-        println!("usage: {} COMMAND", args[0]);
-        println!("commands:");
-        println!(" list                       List the supported connected radios");
-        println!(" install                    Install OpenRTX");
-        println!(" restore                    Restore original firmware");
-        process::exit(0);
-    }
-    let command = args[1].clone();
-    if command == "list" { list(); }
-    else if command == "install" { install(); }
-}
-
 fn list() {
     ffi::list_devices();
 }
@@ -48,4 +31,28 @@ fn install() {
 //    println!("Rebooting radio");
 //    ffi::reboot_radio();
     println!("Please reboot the radio");
+}
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    // Print usage information
+    if args.len() < 2 {
+        println!("rtxtool: OpenRTX Installation Software");
+        println!("usage: {} COMMAND", args[0]);
+        println!("commands:");
+        println!(" list                       List the supported connected radios");
+        println!(" install                    Install OpenRTX");
+        println!(" restore                    Restore original firmware");
+        process::exit(0);
+    }
+
+    match args[1]
+        .clone()
+        .as_str() {
+        "list" => list(),
+        "install" => install(),
+        "restore" => todo!(),
+        _ => todo!(),
+    }
 }
