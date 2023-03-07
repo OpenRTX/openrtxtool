@@ -9,6 +9,11 @@ links = "rtxtool"
 
 [dependencies]
 cxx = "1.0"
+gtk = { version = "0.4.8", package = "gtk4" }
+
+[dependencies.adw]
+package = "libadwaita"
+version = "0.1.1"
 
 [build-dependencies]
 cxx-build = "1.0"
