@@ -9,11 +9,13 @@ links = "rtxtool"
 
 [dependencies]
 cxx = "1.0"
-gtk = { version = "0.4.8", package = "gtk4" }
+gtk = { version = "0.6", package = "gtk4", features = ["v4_10", "blueprint"] }
+gettext-rs = { version = "0.7", features = ["gettext-system"] }
 
 [dependencies.adw]
 package = "libadwaita"
-version = "0.1.1"
+version = "0.4"
+features = ["v1_3"]
 
 [build-dependencies]
 cxx-build = "1.0"

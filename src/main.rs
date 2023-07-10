@@ -14,11 +14,9 @@ const APP_ID: &str = "org.openrtx.rtxtool";
 #[cxx::bridge(namespace = "radio_tool::radio")]
 mod ffi {
     unsafe extern "C++" {
-        include!("rtxtool/radio_tool/include/radio_tool/radio/radio_factory.hpp");
         include!("rtxtool/include/radio_tool.h");
         fn list_devices();
         fn flash_radio() -> Result<()>;
-        fn reboot_radio() -> Result<()>;
     }
 }
 
@@ -33,8 +31,6 @@ fn install() {
         process::exit(1);
     }
     println!("Firmware flash completed");
-//    println!("Rebooting radio");
-//    ffi::reboot_radio();
     println!("Please reboot the radio");
 }
 
