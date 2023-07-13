@@ -2,8 +2,6 @@
 name = "openrtxtool"
 version = "0.1.0"
 edition = "2021"
-# https://cxx.rs/build/cargo.html#publicly-exporting-header-directories
-links = "openrtxtool"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
