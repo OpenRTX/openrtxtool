@@ -9,12 +9,12 @@ use adw::prelude::*;
 use adw::{Application, ApplicationWindow, HeaderBar};
 use gtk::{Box, Orientation, SelectionMode, Label, Button, Picture};
 
-const APP_ID: &str = "org.openrtx.rtxtool";
+const APP_ID: &str = "org.openrtx.openrtxtool";
 
 #[cxx::bridge(namespace = "radio_tool::radio")]
 mod ffi {
     unsafe extern "C++" {
-        include!("rtxtool/include/radio_tool.h");
+        include!("openrtxtool/include/radio_tool.h");
         fn list_devices();
         fn flash_radio() -> Result<()>;
     }
@@ -65,7 +65,7 @@ fn build_ui(app: &Application) {
 
     let window: ApplicationWindow = ApplicationWindow::builder()
         .application(app)
-        .title("rtxtool")
+        .title("openrtxtool")
         .default_height(600)
         .default_width(1000)
         .content(&content)
@@ -93,7 +93,7 @@ fn main() {
 
     //// Print usage information
     //if args.len() < 2 {
-    //    println!("rtxtool: OpenRTX Installation Software");
+    //    println!("openrtxtool: OpenRTX Installation Software");
     //    println!("usage: {} COMMAND", args[0]);
     //    println!("commands:");
     //    println!(" list                       List the supported connected radios");

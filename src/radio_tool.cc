@@ -3,10 +3,10 @@
  */
 
 #include <memory>
-#include "rtxtool/include/radio_tool.h"
-#include "rtxtool/radio_tool/include/radio_tool/radio/radio_factory.hpp"
-#include "rtxtool/radio_tool/include/radio_tool/radio/tyt_radio.hpp"
-#include "rtxtool/radio_tool/include/radio_tool/radio/yaesu_radio.hpp"
+#include "openrtxtool/include/radio_tool.h"
+#include "openrtxtool/radio_tool/include/radio_tool/radio/radio_factory.hpp"
+#include "openrtxtool/radio_tool/include/radio_tool/radio/tyt_radio.hpp"
+#include "openrtxtool/radio_tool/include/radio_tool/radio/yaesu_radio.hpp"
 
 namespace radio_tool::radio
 {
