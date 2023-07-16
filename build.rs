@@ -26,6 +26,8 @@ fn main() {
         .include("include")
         .include("radio_tool/include")
         .flag_if_supported("-std=c++17")
+        // NOTE: Disable radio_tool compile warnings, it is just a submodule here
+        .flag_if_supported("-w")
         .compile("radio_factory");
 
     println!("cargo:rerun-if-changed=src/main.rs");
